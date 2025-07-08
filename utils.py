@@ -924,6 +924,8 @@ def filter_dataframe(df: pd.DataFrame, clear_filters) -> pd.DataFrame:
 def clear_saved_charts():
     """Clears the saved_charts folder if there are no messages in session state."""
     folder = "saved_charts"
+    if not os.path.exists(folder):
+        os.makedirs(folder)
     if "messages" in st.session_state and not st.session_state.messages:
         for filename in os.listdir(folder):
             file_path = os.path.join(folder, filename)
