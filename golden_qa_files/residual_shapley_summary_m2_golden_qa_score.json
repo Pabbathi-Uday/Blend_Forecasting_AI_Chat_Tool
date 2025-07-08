@@ -1,0 +1,31 @@
+question,answer,QA_score
+What factors might explain why 'weekly_sales_lag_1w' had a positive impact across stores in August 2012?,"In August 2012, 'weekly_sales_lag_1w' had a significant positive impact due to the model's over-reliance on recent sales data, as evidenced by the high Shapley values for this feature in stores like Store_ID 10 and Store_ID 14.
+
+,",9
+How do the key drivers identified in the August 2012 summary reflect broader market conditions?,"The key drivers in August 2012, such as economic conditions like CPI and Unemployment, reflect broader market conditions by highlighting the model's sensitivity to macroeconomic indicators, which contributed to forecast residuals.
+
+,",9
+What might explain the atypical behavior of 'Temperature' noted in the August 2012 summary?,"In August 2012, 'Temperature' had a negative Shapley value for Store_ID 10, suggesting it reduced predicted sales more than usual, possibly due to unfavorable weather conditions affecting consumer behavior.
+
+,",9
+How might the forecasting model be adjusted to better account for unexpected feature influences in August 2012?,"The forecasting model could be adjusted by reducing its reliance on recent sales trends and incorporating more robust economic indicators to better account for unexpected influences like CPI and Unemployment.
+
+,",9
+"What explains the consistent overprediction pattern for Store ID 10 on August 12, 2012?","The overprediction for Store ID 10 on August 12, 2012, was due to the model overestimating the effects of recent sales trends, store size, and economic conditions, as indicated by the high Shapley values for 'weekly_sales_lag_1w', 'Size', and 'Unemployment'.
+
+,",9
+"Why did Store ID 14 on August 26, 2012, experience a substantial overprediction of $347,699.65?","Store ID 14 experienced a substantial overprediction on August 26, 2012, because the model over-relied on recent sales data and store size while underestimating the impact of economic factors, as shown by the high Shapley values for 'weekly_sales_lag_1w' and 'Size'.
+
+,",9
+What combination of factors led to the inaccurate forecast for Store 14 in the last week of August?,"The inaccurate forecast for Store 14 in the last week of August was due to the model's over-reliance on recent sales trends and store size, coupled with an underestimation of economic conditions, as reflected in the Shapley values for 'weekly_sales_lag_1w', 'Size', and 'Unemployment'.
+
+,",9
+"For Store 10 on August 12, 2012, which features had the most significant impact on the forecast error based on their Shapley values?","For Store 10 on August 12, 2012, 'weekly_sales_lag_1w', 'Size', and 'Unemployment' had the most significant impact on the forecast error, with Shapley values of $835,514.80, $43,335.67, and $17,353.21, respectively.
+
+,",9
+How did the features with significant Shapley values contribute to the discrepancy between actual and predicted sales for Store 10?,"The features with significant Shapley values, such as 'weekly_sales_lag_1w' and 'Size', contributed to the discrepancy by causing the model to overestimate the predicted sales, leading to a residual error of -$152,908.94.
+
+,",9
+"Why did 'Size' for Store 14 have a Shapley value of $87,057.24 on August 26, 2012, which significantly exceeds its dataset-wide average of -$9,621.17?","'Size' for Store 14 had a Shapley value of $87,057.24 on August 26, 2012, significantly exceeding its average due to the model's overemphasis on the store's large physical size, contributing to the forecast error.
+
+,",9

@@ -1,0 +1,110 @@
+2025-07-08 22:29:11 [INFO] Question: What is the MAPE of the model across the regions?
+2025-07-08 22:29:11 [INFO] Running PandaAI with openai LLM...
+2025-07-08 22:29:11 [INFO] Prompt ID: 960745b0-2427-4ec3-8291-ffaba87277cd
+2025-07-08 22:29:11 [INFO] Generating new code...
+2025-07-08 22:29:21 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 22:29:21 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# SQL query to calculate MAPE across regions
+sql_query = """
+SELECT 
+    Region,
+    AVG(ABS((y - pred) / y)) * 100 AS MAPE
+FROM 
+    table_745a99924ce14b4ca9993e18d3e603be
+GROUP BY 
+    Region
+ORDER BY 
+    MAPE
+"""
+
+# Execute the SQL query and get the result as a DataFrame
+mape_df = execute_sql_query(sql_query)
+
+# Declare result var:
+result = {
+    "type": "dataframe",
+    "value": mape_df
+}
+2025-07-08 22:29:21 [INFO] Validating code requirements...
+2025-07-08 22:29:21 [INFO] Code validation successful.
+2025-07-08 22:29:21 [INFO] Cleaning the generated code...
+2025-07-08 22:29:21 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT 
+    Region,
+    AVG(ABS((y - pred) / y)) * 100 AS MAPE
+FROM 
+    table_745a99924ce14b4ca9993e18d3e603be
+GROUP BY 
+    Region
+ORDER BY 
+    MAPE
+"""
+mape_df = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': mape_df}
+2025-07-08 22:29:22 [INFO] Response generated successfully.
+2025-07-08 22:29:26 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 22:29:32 [INFO] Question: How does the model performance vary by region (DSX, BTS)?
+2025-07-08 22:29:32 [INFO] Running PandaAI with openai LLM...
+2025-07-08 22:29:32 [INFO] Prompt ID: f39ae3d6-f7d5-4699-8859-c7aa7cf6f07e
+2025-07-08 22:29:32 [INFO] Generating new code...
+2025-07-08 22:29:41 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 22:29:41 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# SQL query to aggregate model performance by region
+sql_query = """
+SELECT 
+    Region,
+    COUNT(*) AS num_records,
+    AVG(y) AS avg_actual,
+    AVG(pred) AS avg_pred,
+    SUM(residual) AS total_residual,
+    AVG(CPI) AS avg_CPI,
+    AVG(FedFund) AS avg_FedFund,
+    AVG(Unemployment) AS avg_Unemployment
+FROM 
+    table_745a99924ce14b4ca9993e18d3e603be
+GROUP BY 
+    Region
+ORDER BY 
+    total_residual DESC;
+"""
+
+# Execute the SQL query and store the result in a DataFrame
+performance_df = execute_sql_query(sql_query)
+
+# Declare result var: 
+result = {
+    "type": "dataframe",
+    "value": performance_df
+}
+2025-07-08 22:29:41 [INFO] Validating code requirements...
+2025-07-08 22:29:41 [INFO] Code validation successful.
+2025-07-08 22:29:41 [INFO] Cleaning the generated code...
+2025-07-08 22:29:41 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT 
+    Region,
+    COUNT(*) AS num_records,
+    AVG(y) AS avg_actual,
+    AVG(pred) AS avg_pred,
+    SUM(residual) AS total_residual,
+    AVG(CPI) AS avg_CPI,
+    AVG(FedFund) AS avg_FedFund,
+    AVG(Unemployment) AS avg_Unemployment
+FROM 
+    table_745a99924ce14b4ca9993e18d3e603be
+GROUP BY 
+    Region
+ORDER BY 
+    total_residual DESC;
+"""
+performance_df = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': performance_df}
+2025-07-08 22:29:41 [INFO] Response generated successfully.
+2025-07-08 22:29:50 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
